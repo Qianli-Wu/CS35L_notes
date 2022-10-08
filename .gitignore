@@ -1,0 +1,6 @@
+# Exclude Rendered Files
+*.pdf
+**/*.pdf
+
+*.png
+**/*.png

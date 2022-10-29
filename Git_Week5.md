@@ -6,19 +6,33 @@
 
 # Week 5
 
+## Anouncement
+
+* Thanks you so much for your feedback!!!
+  * How can I improve:
+    * More prepared.                Sure!
+    * Slower.                           (Hummmmm that's a challenge for me)
+    * One-on-one help.            (send me an email: qianliwu@g.ucla.edu)
+    * Office Hours?  
+* It's Halloween!!
+  * Candies!!!!
+* Usually I don't use `git merge --continue`, instead after I resolved the conflits I use `git status` to check and it will provide further instructions
+* Learn `git rebase` if time permits, it's used for making cleaner commit history
+* use `git branch -a` instead of `git branch`
+
+
+
 
 
 ## Git
 
 > Reference: [Pro Git 2nd Edition](https://git-scm.com/book/en/v2) 
 >
-> Assignment4: Chapter 1, 2.1-2.6, 3.1-3.5
+> Assignment4: Chapter 1, 2.1-2.6, 3.1-3.5, and 3.6 (if time permits)
 >
-> Assignment6: Chapter 3.6, 10
+> Assignment6: Chapter 10
 >
 > <img src="https://git-scm.com/images/progit2.png" style="zoom:50%;" />
-
-
 
 
 
@@ -29,6 +43,8 @@
 * Follow the instructions here:
 
   > https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+
+
 
 
 
@@ -103,7 +119,7 @@
 
 * To see what you’ve changed but not yet staged: `git diff`
 
-<img src="https://git-scm.com/book/en/v2/images/lifecycle.png" style="zoom:50%;" />
+<img src="https://git-scm.com/book/en/v2/images/lifecycle.png" style="zoom:100%;" />
 
 * To see what you’ve staged so far: `git diff --staged` or `git diff --cached`
 
@@ -487,3 +503,28 @@ gitGraph
 
 * <span style="color:red"> [Optional, Hard] </span> Can there be more than one common ancesters between two commits?
 
+
+
+
+
+
+
+## Tips for Assignment4
+
+* Things you need to know:
+
+  1. `git blame` and how to use it on GitHub
+  2. tags
+  3. shell command `diff` and how to patch
+
+* Other helpful commands
+
+  1. `awk -F `
+
+  2. `$1`, `$2` in shell scripting
+
+  3. `git stash`
+
+  4. How to do `git stach` without using git (by `diff` and `patch`)
+
+     

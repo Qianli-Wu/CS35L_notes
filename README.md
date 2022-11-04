@@ -2,6 +2,10 @@
 
 Hello, this repo is where my notes for Discussion 1E will be posted every Friday in Fall 2022. 
 
+* Your feedback is precious to me! Feel free to reach out to me before / after the discussion, or you can [create an issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue) for this repo, or I'll figure out other ways to do it.
+* To have the same beautiful style as I do in Discussion, please see rendered HTML files.
+* If you find this repo useful, feel free to star this project (at the top right corner) to find it quickly next time. 
+
 
 
 ## How to Clone (download)?
@@ -27,20 +31,14 @@ $ git clone https://github.com/Qianli-Wu/CS35L_notes.git
 * [Typora](https://typora.io) 
   * I'm using Typora with Liquid theme, so if you open my notes in other text editor or other themes, the style of markdown file may be subject to change
 * VS code and Markdown All in One Extension
-* $ \cdots$
+* ...
 * Otherwise, you can open `.html` files in your browser by double-clicking
 
 
 
 ## If you find a mistake ...
 
-* There might be some terrible mistakes, please create a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) or let me know if you spot one so I can correct it ASAP.
-
-* To have the same beautiful style as I do in Discussion, please see rendered HTML files.
-
-* If you find this repo useful, feel free to star this project (at the top right corner) to find it quickly next time. 
-
-* Your feedback is precious to me! Feel free to reach out to me before / after the discussion, or you can [create an issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue) for this repo, or I'll figure out other ways to do it.
+* There might be some terrible mistakes, please create an [issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue) or [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) or let me know if you spot one so I can correct it ASAP.
 
 
 

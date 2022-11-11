@@ -1,3 +1,21 @@
+
+
+
+
+
+
+# Come back at 14:25!
+
+
+
+
+
+
+
+
+
+
+
 # Fall 2022
 
 # CS 35L
@@ -85,8 +103,8 @@ $ gcc ... randall.o rand64-hw.o rand64-sw.o output.o options.o -o randall
 * Handle incremental build weel and enable parallelization
 
 ```{makefile}
-foo: foo1.o foo2.o foo3.o   # behind the comma are dependencies
-		g++ foo1.o foo2.o foo3.o -o foo
+foo: foo1.o foo2.o foo3.o   # behind the colon are dependencies
+		g++ $^ -o $@   
 foo1.o: foo.c
 		g++ -c foo.c
 ```
@@ -225,6 +243,12 @@ ssize_t write(int fd, const void *buf, size_t count);
   * in this case probably only `standard output` or standard error?
 * `*buf ` stands for buffer. This contains any data in it.
 * `count` is the number of bytes to be written to a file descriptor from the buffer
+
+
+
+
+
+
 
 
 

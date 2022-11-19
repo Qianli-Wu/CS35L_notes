@@ -6,6 +6,27 @@
 
 # Week 8
 
+
+
+## Anouncement
+
+* Workshop for Assignment 6
+  * probably on Monday?
+
+## Resources:
+
+Reference: [Pro Git 2nd Edition](https://git-scm.com/book/en/v2) 
+
+Assignment6: Chapter 10.1 - 10.4
+
+<img src="https://git-scm.com/images/progit2.png" style="zoom:50%;" />
+
+[Tutorial made by Sashwath on YouTube](https://www.youtube.com/watch?v=r1wGH5b3V2E)
+
+
+
+
+
 ## Directed Acyclic Graph (DAG)
 
 ```mermaid
@@ -71,3 +92,25 @@ else
 
 * for every directed edge *uv* from vertex *u* to vertex *v*, *u* comes **before** *v* in the ordering
 
+
+
+
+
+
+
+## Final Review
+
+###### 1a) If you use Github to store your class project souce code, what is your failure model for backups, and what are the most important failures to worry about?
+
+* `git rm -rf`
+* `git merge --abort`
+* Attacker
+
+<details>     
+  <summary>Possible Answer</summary>     
+  <p style="color: red"> delete data, trash data, messed up when using `git rebase`</p>
+</details>
+
+
+
+###### 1b) What backup strategy should work well for these failures?

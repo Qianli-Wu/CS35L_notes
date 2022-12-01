@@ -1,3 +1,318 @@
+# Version Control
+
+### Motivation
+
+* Alternatives - You **won't lose** your code by accident
+* we want from any system keep track of software system
+  * it allows you to **keep historical versions** of the code, for easy reverting, comparison and investigation.
+
+### Version control needs
+
+* **history** of each project (backups for operators)
+* planned **future** of each project (incomplete / wrong)
+
+
+
+**DevOps**: Developers (write code) + Opeartors (管理员)
+
+### Backups 
+
+(from Ops viewpoint)
+
+##### strategy: copy all the data once a day
+
+* pros: 
+  * simple  
+* *cons*:
+  * a lot excess work -- most data don't change
+  * forget to do it
+  * lose up to a day's work
+  * need time to copy data, either:
+    1. lose access while copying
+    2. copy is not self-consistent
+
+##### failure model
+
+* flash drive fails completely
+  * Annulized Faliure Rate (0.2% - 2.5%)
+* flash drive fails partially (e.g., one block doesn't work)
+* delete data by mistake (e.g. ```rm -rf /*```)
+* trash data by mistake (e.g. changed a little bit of file)
+* an outside attacter deletes/trashes files
+* an insider deletes/trashes files
+
+### What to back up?
+
+* contents of files 
+* metadata 
+  * ```ls -l``` output, e.g. author, data, links
+  * ```mant``` output, file system info
+* backup units  ==  blocks (e.g. 8KB) 
+* only backup changed blocks ( **incremental backup** )
+  * save effort
+  * save time
+  * restores more cost
+
+##### Do we need to back up every change?
+
+* No - some changes aren't that important
+* e.g. files in ```/tmp/*```
+  * temperatory files generated
+
+##### When do we reclaim backed-up storage?
+
+
+
+
+
+##### How to do backups cheaply?
+
+* do them less often
+* do them to a cheaper, slower device
+* remote backup service
+* incremental backups
+
+### Incremental backups
+
+* **block oriented**: 
+
+  * Old Version: 
+
+    | OLD  | b1   | b2   | b3   | ...  |      |      |      | b8   | B9   |
+    | :--- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+
+  * New Version: 
+
+    | NEW  |      | b2 new staff |      |      |      |      |      | b8 new staff |      |
+    | :--- | ---- | :----------: | ---- | ---- | ---- | ---- | ---- | :----------: | ---- |
+
+  * Representation of delta: 
+
+    |  2   | new content |
+    | :--: | :---------: |
+    |  8   | new content |
+
+  * NEW - OLD = a delta
+
+  * store changes blocks and their contents
+
+* **stream / text oriented ** :
+
+  * New Version: 
+
+    | NEW  |      | inserted line |      |      |      |      |      | changed line |      |
+    | :--- | ---- | :-----------: | ---- | ---- | ---- | ---- | ---- | :----------: | ---- |
+
+  * Block oriented *won't work* since after insertion every block after that line is changed
+
+  * Representation of delta 
+
+    * insert line 27  ``` line 27: ... ```
+    * changes lines 100, 101  ``` line 100: ... ```
+    * Delet line ...
+
+  * can fit ```sed``` edit script
+
+##### Other Optimization
+
+* **Deduplication**
+  * ``` cp a b```  copy ```a``` and writing to ```b```
+  * **Copy-on-write** -- create a linke ```b``` points to ```a```'s data, pretend there's a copy
+    * After someone changes ```a``` or ```b``` , make a late copy like ```cp a b```.
+  * *cons*: if the user make copy because worrying the flash will collapse
+
+* **Compression**
+  * ```$ gzip < a > b```
+  * *pros*: save space (smaller)
+  * *cons*: longer to backup and recover
+* **Multiplexing**
+* single backup device to backup losts of pieces of data
+
+* **Staging**
+  * more backup devices that are bigger and slower 
+    * like (RAM - flash - drive)
+
+  * **Automated Data Grooming**
+    * have a program automatically delete files (or move to another backup device)
+
+
+##### Other issues of Backups
+
+* **Encryption**
+  * slower, consuming CPU time
+  * good reason to do so: resist attacks? 
+* **How do you know your backups work?**
+  * test backups occationally
+  * **checksum**
+    * as you make a copy of data, also copy a short checksum
+    * store checksum in another device
+    * whenever use backup, make sure it matches the checksum
+
+
+
+# File Systems with versioning
+
+### Traditional
+
+* simple: automatic, programmer won't worry about it
+* Apps decide when there's a new version (e.g. whenever close, creates a new version)
+* Used in traditional opearting system like ITS, TENEX, OpenVMS
+  * ```foo.c;1```
+  * ```foo.c;2```
+  * ....
+* Has 32767 versions max
+* has data grooming - clean older files
+
+### **Snapshot**
+
+<img src="https://i.stack.imgur.com/Arh8o.png" style="zoom:80%;" />
+
+* filesystem design allows for cheap snapshot of entire filesystem
+
+* idea: all files are immutable
+
+* SeasNET is using this strategy
+  * ```cd .snapshot```
+  * ```ls -l```
+  * ```cd 2022-02-03```
+
+* No updates allowed, cannot modify history
+
+
+
+# Source Code Version Control
+
+* ('backup for source code' ++)
+
+* More efficient than file versioning
+* more *useful* than file versioning
+
+##### **Useful Features**:
+
+* keep old versions indefinitely (so expensive to develop and small source code)
+* record metadata, too 
+  * e.g. Who made the change / When the change is made / regular file or symbolic link?
+* file renaming (important in special case of metadata change)
+* metadata about version control system
+  * e.g. can I name a particular version v.2.33.0
+* **atomic changes** to multiple part of the system
+  * all or nothing, no intermediate stage
+* Hooks (ability to modify how version control system works)
+  * e.g. pre-commit hook - check over changes when commit to ensure following proper style rules
+  * a program written by you or others
+  * e.g. post-commit hook 
+  * makes version control system tailorable
+
+##### More Features
+
+* navigation and visualization feature
+  * be able to see what's the history looks like
+* signed commits 
+  * trust the security of project 
+* format conversion
+  * e.g. windows system use CR-LF ```\r\n```  while Liunx and MacOS use LF ```\n``` for newlines. 
+
+
+
+# History of Version Control System (VCS)
+
+http://www.zhuda6.com/new/61abbb92e1f24435844c59469198acce.html
+
+### [1972 - SCCS Source Code Control System](https://en.wikipedia.org/wiki/Source_Code_Control_System)
+
+* Each source file F had a version file , has checksum but no encryption or compression
+
+* | metadata |      | ...  | beta^2 | beta^1 | s.data.txt |
+  | -------- | ---- | ---- | ------ | ------ | ---------- |
+
+* local user + single file, retrive a file O(size(F)) 
+
+
+
+### [1982 - RCS Revision Control System (free software)](https://en.wikipedia.org/wiki/Revision_Control_System)
+
+* right before metadata, there's a copy of most recent copy of F
+
+* Then, the difference of copy with previous version
+
+* Then , the difference between previous version and earlier version, recursively.
+
+* **cons**: It's more expensive to retrieve older version
+
+* **pros**: It's cheaper to retrieve most recent version
+
+* | metadata | copy of F_n | diff F_n and F_{n-1} | diff F_n-1 and F_n-2 | diff.... |      |
+  | -------- | ----------- | -------------------- | -------------------- | -------- | ---- |
+
+* ```$ diff A B >B-A.diff```
+
+  * Compute B - A, show differences between new file B and old file A
+
+* ```$ patch A < B-A.diff```
+
+  * Generate a file, which is A + (B-A), which is old file + the difference with new file
+
+* ```$ patch - R B <B-A.diff```
+
+  * Generate a file, which is B - (B-A), which is new file - the difference with new file
+
+  
+
+
+### [1989 - CVS Concurrent Version System](https://www.nongnu.org/cvs/)
+
+* RCS front end, second generation
+* Support single commits that can change multiple files.
+* **client-server model**, centralized
+* **issues**:  scaling (based on RCS) - thousands of clients  | 1 server that must stay up
+
+
+
+### [1998 - Bitkeeper](http://www.bitkeeper.org)
+
+ (linux development switchent)
+
+* SCCS + distributed Version Control System
+* not open source at first so replace by git
+
+
+
+### [2005 - Git](https://git-scm.com)
+
+* replacement for Linux development switc
+* dirtributed *version control* system built atop a distributed *file* system (POSIX)
+  * history of project
+  * planned future of project ( index | staging area | cache )
+* ```$ git clone ... ``` make a copy of history of project and checkout working files from latest versio
+
+> **Error Correction Code RAM (ECC RAM in bank system)**
+>
+> * correct single-bit error
+> * detect 2-bit error by checksum
+
+##### Which source files belong in version control?
+
+* Automatically-generated source file
+  * **pros**: people can just type 'make'
+  * **cons**: git history too much
+* Bootstrapping process
+  * Put minimum source files that can generate all source files
+  * a file called 'bootstrap', which connect these course files with all source file
+* './configure'
+  * generates platform-dependent configuration
+  * Do 'bootstrap' in one machine and 'config' in another machine
+* './gitignore'
+  * Do not add files to git 
+
+* ##### git commands
+
+  * ```git ls-files	``` 
+    * shows files under version control
+  * ```git add``` 
+    * add file F to the (index | staging area | cache)  - plan for next commit
+
+
+
 # Git
 
 ##### start

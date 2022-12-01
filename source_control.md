@@ -224,8 +224,9 @@
 
 * Each source file F had a version file , has checksum but no encryption or compression
 
-* | metadata |      | ...  | beta^2 | beta^1 | s.data.txt |
-  | -------- | ---- | ---- | ------ | ------ | ---------- |
+
+| metadata |      | ...  | beta^2 | beta^1 | s.data.txt |
+| -------- | ---- | ---- | ------ | ------ | ---------- |
 
 * local user + single file, retrive a file O(size(F)) 
 
@@ -243,7 +244,7 @@
 
 * **pros**: It's cheaper to retrieve most recent version
 
-* | metadata | copy of F_n | diff F_n and F_{n-1} | diff F_n-1 and F_n-2 | diff.... |      |
+  | metadata | copy of F_n | diff F_n and F_{n-1} | diff F_n-1 and F_n-2 | diff.... |      |
   | -------- | ----------- | -------------------- | -------------------- | -------- | ---- |
 
 * ```$ diff A B >B-A.diff```

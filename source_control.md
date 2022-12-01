@@ -216,7 +216,9 @@
 
 # History of Version Control System (VCS)
 
-http://www.zhuda6.com/new/61abbb92e1f24435844c59469198acce.html
+> Reading: VCS history [[English](https://www.red-gate.com/blog/database-devops/history-of-version-control)] [[Chinese](http://www.zhuda6.com/new/61abbb92e1f24435844c59469198acce.html)] 
+
+
 
 ### [1972 - SCCS Source Code Control System](https://en.wikipedia.org/wiki/Source_Code_Control_System)
 

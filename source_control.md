@@ -165,7 +165,7 @@
 
 ### **Snapshot**
 
-<img src="https://i.stack.imgur.com/Arh8o.png" style="zoom:80%;" />
+<img src="https://d2908q01vomqb2.cloudfront.net/d435a6cdd786300dff204ee7c2ef942d3e9034e2/2019/12/20/image.png" style="zoom:90%;" />
 
 * filesystem design allows for cheap snapshot of entire filesystem
 

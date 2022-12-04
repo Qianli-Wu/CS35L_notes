@@ -13,7 +13,7 @@
 
 
 
-**DevOps**: Developers (write code) + Opeartors (管理员)
+**DevOps**: Developers (write code) + Opeartors
 
 ### Backups 
 

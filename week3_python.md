@@ -1,12 +1,18 @@
 
 
-# Fall 2022
+# Winter 2022
 
 # CS 35L
 
-# Discussion 1E
+# Discussion 1D
 
 # Week 3
+
+## Table of Contents
+
+* Python 
+* Regex 
+* Kahoot!
 
 
 
@@ -213,20 +219,21 @@ def main():
 
 ## Regular Expression
 
+>  Reference: 
+>
+> ​	https://cheatography.com/davechild/cheat-sheets/regular-expressions/
+>
+> ​	Yuxing's Slide in Winter 2022
+
+
+
 * `grep` has two modes:
-  1. default `grep`
+  1. basic 
   2. extended (with option -E) `grep -E`
 
 
 
-Reference: 
-
-	1. https://cheatography.com/davechild/cheat-sheets/regular-expressions/
-	1. Yuxing's Slide in Winter 2022
-
-
-
-##### Anchors
+##### Anchors (basic)
 
 * `^` Start of the string
   * `^bash` matches `bash_profile` but not `I like bash`
@@ -238,7 +245,7 @@ google is your friend if you are interested in learning more
 
 
 
-##### Quantifiers
+##### Quantifiers (basic)
 
 * `*` 0 or more
   * `bash*` matches `bas`, `bash`, `bashhhhhhhhh`
@@ -260,7 +267,7 @@ google is your friend if you are interested in learning more
 
  
 
-##### Groups and Ranges
+##### Groups and Ranges (basic)
 
 * `.` any single character (except newline `\n`)
   * `s.t` matches `sit`, `sat`, `set`, ....
@@ -374,6 +381,8 @@ Write a basic regular expression that checks whether or not a vowel is present
 ```
 Write a basic regular expression that causes grep to match lines solely consisting of alphabetical characters (A-Za-z) and digit characters (0-9), where no alphabetical characters appear before digit characters.
 
+e.g.: 123abc
+
 ^[0-9][A-Za-z]$                <-- it will only match a single number/letter
 ^[0-9]*[A-Za-z]*$              <-- Correct
 ^[0-9]*.[A-Za-z]*$             <-- it will match any other symbol like $
@@ -394,7 +403,7 @@ Write an extended regular expression that causes grep -E to match lines that eit
 
 (0-9|flower)              <-- Will only match `0-9` instead of a single number
 
-`[0-9] | flower` <-- Optimal Solution!!!
+`[0-9] | (flower)` <-- Optimal Solution!!!
 
 
 

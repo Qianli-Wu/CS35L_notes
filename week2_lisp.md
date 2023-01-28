@@ -6,21 +6,29 @@
 
 
 
-# Fall 2022
+# Winter 2023
 
 # CS 35L
 
-# Discussion 1E
+# Discussion 1D
 
 # Week 2
 
 
 
+## Interesting Topics
+
+1. Log in to SEASnet without **password**
+2. Log in to SEASnet without **username**
+3. Open VS Code in Terminal (the Command Line)
+
 
 
 ## ssh key pairs
 
-* hopefully everyone can log in to SEASnet servers quickely 
+* log in to SEASnet servers quickely 
+
+* https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
 * Still need passwords?
   * Check the access permissions for `.ssh` and `authorized_keys`
@@ -68,7 +76,7 @@
 
 
 
-##### 	Another Example: 
+##### 	Another Example:
 
 * ```sh
   $ alias ln15="ssh username@lnxsrv15.seas.ucla.edu"
@@ -95,7 +103,7 @@
   [classiwu@lnxsrv15 ~]$
   ```
 
-* **Warning**: might be **DANGEROUS** ! 
+* **Warning**: potentially **DANGEROUS** ! 
 
 * ```sh
   $ unalias ln15  # remove aliasing
@@ -472,14 +480,14 @@ nil                  ; A list of no elements (the empty list).
 
 ###### Exercise:
 
-> Time to do Week 1 Worksheet
+> Time to do Week 2 Worksheet
 
 * What do the following Lisp expressions output, when evaluated?
 
 ```lisp
 a. (quote (1 2 3))                    ;(1 2 3)
 b. '(1 2 3)                           ;(1 2 3)
-c. (list (+ 1 2) '(+ 1 2))            ;(3 (+ 1 2)
+c. (list (+ 1 2) '(+ 1 2))            ;(3 (+ 1 2))
 d. (cons (+ 1 2) '(3 4))              ;(3 3 4)
 e. (+ 10 (car '(1 2 3)))              ; 11
 f. (append ‘(1 2) ‘(3 4))             ; (1 2 3 4)
@@ -503,7 +511,7 @@ h. (cdddar (1 2 3 4 5 6 7))           ; error
 (defun function-name (arguments…)
   "optional-documentation…"
   (interactive argument-passing-info)     ; optional
-  body…)
+  body…) 
 ```
 
 
@@ -540,6 +548,12 @@ Write a function called `is-even` that takes one argument and returns whether it
 
 1. Example: (is-even 4) should evaluate to t.
 2. Example: (is-even 3) should evaluate to nil.
+
+
+$$
+x \% 2 == 0
+$$
+
 
 ```lisp
 ;;; Solution

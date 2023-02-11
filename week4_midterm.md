@@ -1,20 +1,20 @@
 
 
-# Fall 2022
+# Winter 2023
 
 # CS 35L
 
-# Discussion 1E
+# Discussion 1D
 
 # Week 4
 
 
 
-## React Workshop
+## React Workshop (Assignment 3 & Final Project) 
 
-* **Date**: Nov 2nd
-* **Time**: 5 - 6:50 pm
-* **Location**: Dodd 146 
+* **Date**: Fed 08 (Next Wednesday)
+* **Time**: 6-8pm
+* **Location**: TBD
 
 
 
@@ -22,8 +22,8 @@
 
 ## Midterm
 
-* on Oct 26 (next Wednesday)
-* It will be super hard
+* on Feb 09 (next Thursday)
+* will be challenging
 * probably easier than sample midterms, those are open computer
 
 

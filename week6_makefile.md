@@ -34,15 +34,17 @@ Ethan has made [Assignment 5: Low Level Refactoring exercise](https://github.com
 
 ##### Workshop for Assignment 5:
 
-TBD, next week (week 7)
+TBD
 
-##### Join us! Winter LA application is open!
-
-[https://tinyurl.com/AppLAW23](https://tinyurl.com/AppLAW23)
+##### Join us! Spring LA application is open!
 
 
 
-* QR code for this markdown file:
+[https://tinyurl.com/LAAppS23](https://tinyurl.com/LAAppS23)
+
+
+
+* QR code for THIS document:
 
 <img src="/Users/qianli/Documents/CS35L_notes/44ztb7ur-400.png" style="zoom:50%;" />
 
@@ -204,7 +206,7 @@ flowchart RL
 ```
 
 * So OS provides some system calls for those "risky" operations
-* Interested? Take `CS 111` next quarter!
+* Interested? Take `CS 111` with Professor Eggert next quarter!
 
 
 

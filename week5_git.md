@@ -1,8 +1,8 @@
-# Fall 2022
+# Winter 2022
 
 # CS 35L
 
-# Discussion 1E
+# Discussion 1D
 
 # Week 5
 
@@ -86,14 +86,29 @@
 > Worksheet Problem
 
 1. [Make a private GitHub repository](https://github.com/new) titled “cs35l-assignments”.
+   1. web ui
+
 2. Clone your newly created repository to your own computer.
+   1. git clone
+
 3. Create an “assignment3/” directory. 
+   1. Mkdir assignment3
+
 4. Put your related assignment 3 work in this directory. 
+   1. 
+
 5. Commit it and push it to GitHub.
-6. Clone your “cs35l-assignments” directory on SEASnet.
+   1. git add [file name]
+   2. git commit -m "this is assignment 3"
+   3. git push
+
+6. Clone your “cs35l-assignments” directory on SEASnet
+   1. ssh username@lnxsrv.seas.ucla.edu
+   2. git clone .....
+
 7. <span style="color:red"> [Optional] </span> How do you create a local repository and add it to Github?
 
-
+-
 
 
 
@@ -173,7 +188,7 @@ classDiagram
     Modified : "Qianli is my LA"
 ```
 
-* Which one will work?
+* Which one will have output?
 
 ```bash
 $ git diff
@@ -230,9 +245,9 @@ classDiagram
 * Which one wil work?
 
 ```bash
-$ git diff
+$ git diff 
 $ git diff --cached
-$ git diff --staged
+$ git diff --staged [FIlE names]
 $ git diff 5c6cb30..53bf6bd
 $ git diff 5c6c..53bf
 $ git diff 5c6..53b
@@ -298,7 +313,7 @@ Date:   Fri Oct 28 13:02:13 2022 -0700
 
 ## Git Branching
 
-
+https://learngitbranching.js.org
 
 ```mermaid
 %%{init: { 'logLevel': 'debug', 'theme': 'base', 'gitGraph': {'showBranches': true, 'showCommitLabel':true, 'mainBranchName': 'main'}} }%%
